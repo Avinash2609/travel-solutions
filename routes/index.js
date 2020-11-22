@@ -1,5 +1,6 @@
 var express=require("express");
 var passport=require("passport");
+var url=require("url");
 require('dotenv').config();
 
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
@@ -36,6 +37,7 @@ router.get("/",function(req,res){
 router.get("/register", function(req,res){
     res.render("auth_files/register");
 })
+
 
 router.get("/google", passport.authenticate('google',{scope:['profile','email']}));
 

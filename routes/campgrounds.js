@@ -41,6 +41,7 @@ router.get("/info",middleware.isloggedin,function(req,res){
     res.render("campgrounds/city");
 })
 router.post("/info",function(req,res){
+
     doc.find({},function(err,all){
     var list=[];
         all.forEach(function(single){
@@ -49,7 +50,7 @@ router.post("/info",function(req,res){
             }
         })
         if(list.length==0){
-            res.render("/campgrounds/nodoctor");
+            res.render("campgrounds/nodoctor");
         } else {
         res.render("campgrounds/alldoctors",{doc_available:list});  
         }      
