@@ -1,145 +1,64 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <link rel = "icon" href =  
-  "../../public/pic/logo-j.jpg" 
-          type = "image/x-icon"> 
-  <title>NAAkS</title>
 
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8" />
+    <title>Yogi Lite</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <!--Favicon -->
+	<link rel="icon" type="image/png" href="images/favicon.jpg" />
+		
+	<!-- CSS Files -->
+		
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/animate.min.css" />
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/font-awesome.css" />
+	<link rel="stylesheet" href="css/owl.carousel.css" />
+	<link rel="stylesheet" href="css/responsive.css" />
+	<link rel="stylesheet" href="css/player/YTPlayer.css" />
+	<link href="css/pro-bars.css" rel="stylesheet" />
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 
-
-  <meta content="" name="descriptison">
-  <meta content="" name="keywords">
-
-  <link rel="icon" type="image/x-icon" href="../../public/pic/favicon.ico">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <!-- *********************************-->
-
-  <!-- Favicons -->
-  <!-- <link href="../../assets/img/favicon.png" rel="icon">
-  <link href="../../assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
-
-  <!-- Vendor CSS Files-->
-  <!-- <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../../assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="../../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="../../assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="../../assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="../../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="../../assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="../../assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet"> -->
-
-  <!-- Template Main CSS File -->
-  <!-- <link href="../../assets/css/style.css" rel="stylesheet"> -->
-
-  <!-- *********************************-->
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- End CSS Files -->
  
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Raleway:wght@200&family=Xanh+Mono&display=swap" rel="stylesheet">
 </head>
 
-<body style="font-family: 'Josefin Sans', sans-serif;">
+<body>
 
- 
+	<!-- Navigation -->
+	<section id="navigation" class="dark-nav">
+		<!-- Navigation Inner -->
+		<div class="nav-inner">
+			<!-- Site Logo -->
+			<div class="site-logo fancy">
+				<a href="#" id="logo-text" class="scroll logo">Yogi Lite
+				</a>
+			</div><!-- End Site Logo -->
+			<a class="mini-nav-button gray2"><i class="fa fa-bars"></i></a>
+			<!-- Navigation Menu -->
+		    <div class="nav-menu">
+				<ul class="nav uppercase">
+					<li><a href="#home" class="scroll">Home</a></li>       
+					<li><a href="#about" class="scroll">About us</a></li>
+					<li><a href="#features" class="scroll">Features</a></li>     
+					<li><a href="#clients" class="scroll">Exercises</a></li>
+					<li><a href="#testimonial" class="scroll">Testimonial</a></li>
+					<li><a href="#contact" class="scroll">Contact</a></li>
+				</ul>
+		  </div><!-- End Navigation Menu -->
+		</div><!-- End Navigation Inner -->
+		
+	</section><!-- End Navigation Section -->
 
+	<section id="clients" class="container" >
+		<div  style="margin-top: 1%;">
 
-  <div style="margin-bottom: 100px;">
-
-    <!-- navbar start -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: aliceblue;">
-            <a class="navbar-brand" href="/info" style="color:#21618C">
-              <i class="fas fa-stethoscope" style="font-size:20px;color:#21618C"></i>&nbsp;TU NAAkS
-        <img src="../../public/pic/full-logo-j.jpg" style="height: 20; width:10;">
-      </a>
-    
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse justify-content-sm-end " id="navbarSupportedContent">
-        <ul class="navbar-nav" style="color:#21618C">
-
-          <% if(!currentuser){ %>
-          <li class="nav-item" style="color:#21618C">
-            <a class="nav-link  btn btn-link" href="/register" style="color:#21618C"> <i class="fas fa-user-circle" style="font-size:20px;color:#21618C"></i>&nbsp;Login/Register</a>
-          </li>
-          <!-- <li class="nav-item">
-                <a class="nav-link" href="/register">Sign Up</a>
-            </li> -->
-          <% } else { %>
-          <li class="nav-item" style="color:#21618C">
-            <a class="nav-link  btn btn-link" href="#t" style="color:#21618C">Signed In As <%= currentuser.displayName %> </a>
-          </li>
-          <li class="nav-item" style="color:#21618C">
-            <a class="nav-link  btn btn-link" href="/logout" style="color:#21618C">&nbsp;Logout</a>
-          </li>
-          <% } %>
-        </ul>
-
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link btn btn-link" href="/info" style="color:#21618C"> <i class="fa fa-home" style="font-size:20px;color:#21618C"></i>&nbsp;Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn btn-link" href="/aboutus" style="color:#21618C"><i class="fas fa-address-card" style="font-size:20px;color:#21618C"></i>&nbsp;About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn btn-link" href="/campgrounds/collab" style="color:#21618C">Join US! </a>
-          </li>
-        
-        </ul>
-        <ul class="navbar-nav">
-
-          <% if(currentuser){ %>
-            <li class="nav-item">
-              <a class="nav-link btn btn-link" href="/info" style="color:#21618C"><i class="fa fa-user-md" style="font-size:20px;color:#21618C"></i>&nbsp; Find Youself a Doctor!</a>
-            </li>
-                   <% } else { %>
-     
-          <% } %>
-        </ul>
-      </div>
-    </nav>
-  </div>
-
-
-
-  <!-- navbar end -->
-
-  <div class="container" id="particles-js">
-    <% if(error && error.length > 0 ){ %>
-    <div class="alert alert-danger" role="alert">
-      <%= error %>
-    </div>
-    <% } %>
-    <% if(success && success.length > 0 ){ %>
-    <div class="alert alert-success" role="alert">
-      <%= success %>
-    </div>
-    <% } %>
-
-
-
-  </div>
-
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-    crossorigin="anonymous"></script>
-  
+		</div>
+	</section>

@@ -2,8 +2,13 @@ var mongoose=require("mongoose");
 // var passportlocalmongoose=require("passport-local-mongoose");
 
 var userschema = new mongoose.Schema({
-    city: String,
-    state: String,
+    name: String,
+    email: String,
+    phone: Number,
+    sex:String,
+    height: Number,
+    weight: Number,
+    id: String
 })
 
 // userschema.plugin(passportlocalmongoose);

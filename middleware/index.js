@@ -1,5 +1,5 @@
-var campground=require("../models/campground");
-var Comment=require("../models/comments");
+var activities=require("../models/activities");
+var exercise=require("../models/exercise");
 
 var middlewareobj={};
 

@@ -26,15 +26,16 @@ mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology:
 var flash = require("connect-flash");
 app.use(flash());
 
-var campground=require("./models/campground");
-var Comment=require("./models/comments");
+
+var activities=require("./models/activities");
+var exercise=require("./models/exercise");
 
 
 
 var indexroutes=require("./routes/index");
-var campgroundroutes=require("./routes/campgrounds");
-var commentroutes=require("./routes/comments");
-var paymentroutes=require("./routes/payment");
+var mainroutes=require("./routes/main");
+// var commentroutes=require("./routes/comments");
+// var paymentroutes=require("./routes/payment");
 // ////////////////////////////////////
 // payment gateway////////////////////
 /////////////////////////////////////
@@ -62,9 +63,9 @@ app.use(function(req,res,next){
 
 
 app.use(indexroutes); 
-app.use(campgroundroutes);
-app.use(commentroutes);
-app.use(paymentroutes);
+app.use(mainroutes);
+// app.use(commentroutes);
+// app.use(paymentroutes);
 
 
 

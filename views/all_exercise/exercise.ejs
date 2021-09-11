@@ -1,0 +1,51 @@
+<%- include("../partials/header") %>
+
+<section id="clients" class="container" >
+
+    <!-- Team Inner -->
+    <div class="inner team ">
+
+        <!-- Header -->
+        <h1 class="header light gray3 fancy"><span class="colored">Our </span> Gymnasts</h1>
+
+        <!-- Description -->
+        <p class="h-desc gray4">Explore all<span class="colored bold">  Our Exercises</span> </p>
+
+
+        <!-- Members -->
+        <div class="team-members inner-details">
+            <% let x=0; %>
+           <% allexercises.forEach(function(current_exercise){ %>
+                         <!-- Member -->
+            <div class="col-xs-4 member animated" data-animation="fadeInUp" data-animation-delay="<%= x %>">
+                <div class="member-inner colored" style="border-width: medium;border-style: solid;" >
+                    <!-- Team Member Image -->
+                    <a class="team-image">
+                        <!-- Img -->
+                        <img src="images/squats.gif" alt="" >
+                    </a>
+                    <div class="member-details">
+                        <div class="member-details-inner">
+                            <!-- Name -->
+                            <h2 class="member-name light"> <%= current_exercise.name %> </h2>
+                            <!-- Description -->
+                            <p class="member-description"><%= current_exercise.description %>  </p>
+                            <!-- Socials -->
+                            <div class="socials">
+                                <!-- Link -->
+                                
+                                <a href="/embedded/<%=current_exercise._id %>"><i class="fa fa-link"></i></a>
+                            </div><!-- End Socials -->
+                        </div> <!-- End Detail Inner -->
+                    </div><!-- End Details -->
+                </div> <!-- End Member Inner -->
+            </div><!-- End Member -->
+
+           <% x=x+100; x=x%500;  }) %>
+
+        </div><!-- End Members -->
+    </div><!-- End Team Inner -->
+</section><!-- End Team Section -->
+
+
+<%- include("../partials/footer") %>
