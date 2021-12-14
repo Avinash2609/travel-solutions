@@ -33,8 +33,13 @@
                             <!-- Socials -->
                             <div class="socials">
                                 <!-- Link -->
-                                
-                                <a href="/embedded/<%=current_exercise._id %>"><i class="fa fa-link"></i></a>
+                                <!-- <a href="/embedded/<%=current_exercise._id %>"><i class="fa fa-link"></i></a> -->
+                                <% if(current_exercise.name=="Squats" && !(user._json.hd && user._json.hd=="thapar.edu") && (!pre || pre==false)){ %>             
+                                    <a href="/premium/payment" class="text-center"><i class="fa fa-link"></i></a>
+                                    <p class="member-description">Premium  </p>
+                                <%}else{%>
+                                    <a href="/embedded/<%=current_exercise._id %>"><i class="fa fa-link"></i></a>
+                                <%}%>
                             </div><!-- End Socials -->
                         </div> <!-- End Detail Inner -->
                     </div><!-- End Details -->

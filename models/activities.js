@@ -20,6 +20,7 @@ var activityschema=new mongoose.Schema({
     //     }
     // },
     userki_id:String,
+    calcount:Number,
     calburnt:Number,
     id:String
 });

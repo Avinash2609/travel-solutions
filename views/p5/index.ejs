@@ -50,6 +50,7 @@
 </style> 
 
 
+
 <script>
   
   // Set the date we're counting down to
@@ -68,14 +69,13 @@
    var  hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
     // Display the result in the element with id="demo"
     document.getElementById("disp").innerHTML = days + "d " + hours + "h "
     + minutes + "m " + seconds + "s ";
     // var uurl="/finish/"+hours+"/"+minutes + "/" +seconds+"/"+user.id+'/'+model+'/'+current_activity;
-    var uurl="/finish/"+hours+"/"+minutes + "/" +seconds+"/";
-    
-    document.getElementById("timer-send").setAttribute("href",uurl);
+
+    var uurl="/finish"+ "/" +hours+"/"+minutes + "/" +seconds;
+    document.getElementById("timer-send").setAttribute("href",uurl+"/<%=current_activity%>");
   
     // If the count down is finished, write some text
     if (distance < 0) {
@@ -97,9 +97,9 @@
       <iframe class="embed-responsive" src="<%=model.link%>" allow="camera" allowfullscreen  width="100%" height="100%"></iframe>    
     </div>
     <p style="color:yellow;">Your Video Here</p>
-
+    
     <button id="disp" class="btn btn-light">Timer</button>    
-    <a  id = "timer-send" href="/finish/0/0/0/0/0/0" class="btn btn-success" style="margin-left:5px;">End</a>
+    <a  id = "timer-send" href="/finish/0/0/0/0" class="btn btn-success" style="margin-left:5px;">End</a>
 
   </div>
   

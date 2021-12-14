@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>    
-    <title>Yogi Lite</title>
+    <title>Blog Template · Bootstrap v5.1</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/blog/">
 
@@ -61,49 +61,44 @@
 
 <main class="container">
 
-  <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
-    <div class="col-md-6 px-0">
-      <h1 class="display-4 fst-italic">Together we can get fitter!</h1>
-      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-      <p class="lead mb-0"><a href="/recommendation" class="stretched-link">Get Recommendation</a></p>
-    </div>
-  </div>
-  <h3 class="pb-4 mb-4 fst-italic border-bottom">
-        History
-      </h3>
-  <div class="row mb-2">
-   <% allacts.forEach(function(act){ %>
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary">Sqauts</strong>
-          <h3 class="mb-0"> <%= act.myexercise %></h3>
-          <div class="mb-1 text-muted">StartDate: <%= act.startdate %> </div>
-       <div class="mb-1 text-muted">EndDate: <%= act.enddate %></div>
-       <div class="mb-1 ">Duration: <%= act.duration %></div>
-       <div class="mb-1 ">Calories burned: <%= act.calburnt %></div>
-         
+    <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+        <div class="col-md-6 px-0">
+          <h1 class="display-4 fst-italic">Together we can get fitter!</h1>
+         <h3> Fruit and vegetables: are you getting your 5 A Day?</h3>
+          <p class="lead my-3">
+            Fruit and vegetables are a good source of vitamins and minerals and fibre, and should make up just over a third of the food you eat each day.
+
+            It's recommended that you eat at least 5 portions of a variety of fruit and vegetables every day. They can be fresh, frozen, canned, dried or juiced.
+            
+            There's evidence that people who eat at least 5 portions of fruit and vegetables a day have a lower risk of heart disease, stroke and some cancers.
+            
+            Eating 5 portions is not as hard as it sounds.
+            
+            <br>A portion is:<br>
+            
+            <li>80g of fresh, canned or frozen fruit and vegetables</li>
+            <li>30g of dried fruit – which should be kept to mealtimes</li>
+            <li>150ml glass of fruit juice or smoothie – but do not have more than 1 portion a day as these drinks are sugary and can damage teeth</li>
+            <br>Just 1 apple, banana, pear or similar-sized fruit is 1 portion each.
+            
+            A slice of pineapple or melon is also 1 portion, and 3 heaped tablespoons of vegetables is another portion.
+            
+            Adding a tablespoon of dried fruit, such as raisins, to your morning cereal is an easy way to get 1 portion.
+            
+            You could also swap your mid-morning biscuit for a banana, and add a side salad to your lunch. 
+            
+            In the evening, have a portion of vegetables with dinner and fresh fruit with plain, lower fat yoghurt for dessert to reach your 5 A Day. 
+            </p>
           
         </div>
-        <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-        </div>
       </div>
-    </div>
-         <% }) %> 
-  </div>
-
- 
-
 </main>
-
 <footer class="blog-footer text-center">
-  <p><a href="/exercise">Yogi Lite</a></p>
-  <p>
-    <a href="#">Back to top</a>
-  </p>
-</footer>
+    <p><a href="/exercise">Yogi Lite</a></p>
+    <p>
+      <a href="#">Back to top</a>
+    </p>
+  </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     

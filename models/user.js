@@ -8,7 +8,10 @@ var userschema = new mongoose.Schema({
     sex:String,
     height: Number,
     weight: Number,
-    id: String
+    id: String,
+    premium: Boolean,
+    txn_id:String
+
 })
 
 // userschema.plugin(passportlocalmongoose);
