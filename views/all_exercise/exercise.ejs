@@ -14,16 +14,19 @@
 
         <!-- Members -->
         <div class="team-members inner-details">
-            <% let x=0; %>
+            <% let x=0,i=1; %>
            <% allexercises.forEach(function(current_exercise){ %>
                          <!-- Member -->
-            <div class="col-xs-4 member animated" data-animation="fadeInUp" data-animation-delay="<%= x %>">
+                         
+            <div class="col-xs-3 member animated" data-animation="fadeInUp" data-animation-delay="<%= x %>">
+                
                 <div class="member-inner colored" style="border-width: medium;border-style: solid;" >
                     <!-- Team Member Image -->
                     <a class="team-image">
-                        <!-- Img -->
-                        <img src="images/squats.gif" alt="" >
+                        <p><%= current_exercise.gif%></p>
+                        <img src="images/<%=i%>.gif" ></img>
                     </a>
+
                     <div class="member-details">
                         <div class="member-details-inner">
                             <!-- Name -->
@@ -46,7 +49,7 @@
                 </div> <!-- End Member Inner -->
             </div><!-- End Member -->
 
-           <% x=x+100; x=x%500;  }) %>
+           <% x=x+100; x=x%500;i=i+1;  }) %>
 
         </div><!-- End Members -->
     </div><!-- End Team Inner -->
