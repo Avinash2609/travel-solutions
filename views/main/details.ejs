@@ -1,0 +1,149 @@
+<html lang="en">  
+<head>  
+  <title>Jquery multiple select with checkboxes using bootstrap-multiselect.js</title>  
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">  
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">  
+</head>  
+<body>  
+<section id="appointment" class="appointment section-bg">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Please enter your details</h2>
+      </div>
+
+      <form action="/hotels/<%= pid %>/<%= rid %>/<%= rname %>/<%= rprice %>" method="post" role="form" class="php-email-form">
+
+        <div class="form-row">
+            <div class="col-md-4 form-group">
+              <input type="text" name="request[name]" class="form-control" placeholder="Full Name">
+              <div class="validate"></div>
+            </div>
+            <div class="col-md-4 form-group">
+              <input type="number" class="form-control" name="request[contact]" placeholder="Contact Number">
+              <div class="validate"></div>
+            </div>
+        </div>
+
+        <div class="form-row">
+
+            <div class="col-md-4 form-group">
+              <label> Select Id Proof: </label>
+                  <select name="request[idtype]">
+                      <option value="Aadhar Card">Aadhar Card</option>
+                      <option value="Pan Card">Pan Card</option>
+                      <option value="Driving License">Driving License</option>
+                      <option value="Voter card">Voter card</option>
+                      <option value="Passport">Passport</option>                    
+                  </select>
+            </div>
+
+            <div class="col-md-4 form-group">
+              <input type="text" class="form-control" name="request[idnumber]" placeholder="Enter UUID Number">
+              <div class="validate"></div>
+            </div>
+
+        </div>
+
+        <div class="form-row">
+          <div class="col-md-4 form-group">
+            <input type="number" class="form-control" name="request[rooms]" placeholder="Number of rooms required">
+            <div class="validate"></div>
+          </div>
+        </div>
+        
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+        <script>
+          $(function(){
+             $('.date-withicon').datepicker({
+                format: 'mm-dd-yyyy'
+              });
+          });
+          $(function(){
+             $('.date-withicon1').datepicker({
+                format: 'mm-dd-yyyy'
+              });
+          });
+          </script>
+
+
+
+        <div class="form-row">
+            <div class="col-md-4 form-group">
+              <div class="input-group date" data-provide="datepicker">
+                <input type="text" class="form-control date-withicon" name="request[checkin]" placeholder="Select Checkin Date(mm-dd-yyyy)"/>
+                <div class="input-group-addon">
+                      <span class="glyphicon glyphicon-th"></span>
+                  </div>
+              </div>
+            </div>
+            
+            <div class="col-md-4 form-group">
+                <div class="input-group date" data-provide="datepicker">
+                  <input type="text" class="form-control date-withicon1" name="request[checkout]" placeholder="Select Checkout Date(mm-dd-yyyy)"/>
+                  <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- 
+        <script type="text/javascript">  
+          $(document).ready(function() {  
+              $('#multiple-checkboxes').multiselect();  
+          });  
+      </script>
+      
+        <div class="form-row">
+            <div class="col-md-4 form-group">
+                <label> Select amenities: </label>
+                <select name="request[amenities]" id="multiple-checkboxes" multiple="multiple">
+                    <option value="beach">beach</option>
+                    <option value="fitness_center">fitness center</option>
+                    <option value="minibar">minibar</option>
+                    <option value="high_speed_internet_in_room">high speed internet in room</option>
+                    <option value="meeting_room">meeting room</option>
+                    <option value="family_rooms">family rooms</option>
+                    <option value="restaurant">restaurant</option>
+                    <option value="casino">casino</option>              
+                    
+                </select>
+            </div>
+        </div>
+        <script type="text/javascript">  
+          $(document).ready(function() {  
+              $('#multiple-checkboxes1').multiselect();  
+          });  
+      </script>
+      
+        <div class="form-row">
+            <div class="col-md-4 form-group">
+                <label> Select ambience filters: </label>
+                <select name="request[zff]" id="multiple-checkboxes1" multiple="multiple">
+                    <option value="3" >Romantic</option>
+                    <option value="4" >Family</option>
+                    <option value="6" >Best Value</option>
+                    <option value="7" >Business</option>
+                    <option value="8" >Top resorts</option>
+                    <option value="10" >On the Beach</option>
+                    <option value="102" >Luxury</option>
+                    <option value="100" >Budget</option>
+                </select>
+            </div>
+          </div>   -->
+        <button type="submit" style="text-align: center;" class='dropdown-item btn btn-info' >Submit</button>
+      
+      </form>
+    </div>
+  </section>
+
+
+  <div class="container" style="margin-top: 210px;">
+<!-- For a gap maintainence -->
+  </div>
+
+</div>
+<%- include("../partials/footer") %>

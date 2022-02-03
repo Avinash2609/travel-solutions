@@ -1,0 +1,34 @@
+<%- include("../partials/header") %>
+<div class="container mt-5">
+    <div class="container jumbotron">    
+<h1>Welcome to TripKart!</h1>
+<p>View our hand-picked hotels</p>
+</div>    
+
+<div class="row text-center">
+    <% hotels.forEach(function(hotel){ %>
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+               <% if(hotel.photo){ %>
+                    <div class="img-thumbnail mb-1">
+                        <img src="<%= hotel.photo.images.thumbnail.url %>" style="width: 150px; height: 100px;" alt="Unable to load image due to network issues">
+                        <div>
+                            <h4 class="text-break"><%= hotel.name %></h4>
+                            <p>Reviews: <%= hotel.num_reviews %> </p>
+                            <p>Price: <%= hotel.price %> </p>
+                            <a href="/hotels/<%=pid%>/<%=hotel.location_id%>/<%=hotel.name%>/<%=hotel.price%>"><button class="btn  btn-info">Check for availability</button></a>
+                        </div>
+                    </div>
+                <% } else{ %>
+                    <div class="img-thumbnail mb-1">
+                        <img  style="width: 150px; height: 100px;" alt="Unable to load image due to network issues">
+                        <div>
+                            <h4 class="text-break"><%= hotel.name %></h4>
+                            <p>Reviews: <%= hotel.num_reviews %> </p>
+                        </div>
+                        </div>
+                <% } %>
+        </div>
+     <% }) %> 
+</div>
+    <%- include("../partials/footer") %>
+</div>

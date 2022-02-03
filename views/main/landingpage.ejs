@@ -1,0 +1,15 @@
+<%- include ("../partials/header") %>
+<form action="/auto" method="post" role="form" class="php-email-form">
+  <div class="col-md-4 form-group">
+    <input type="text" name="auto" class="form-control"  placeholder="Search by type of place" required>
+    <div class="validate"></div>
+    <button class="btn btn-sm btn-success mt-3">Submit</button>
+  </div>
+</form>
+
+<a href="/allbookings">
+  <button style="text-align: center;" class='dropdown-item btn btn-info' >All bookings</button>
+</a>
+
+
+<%- include ("../partials/footer") %>

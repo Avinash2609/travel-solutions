@@ -1,0 +1,29 @@
+<%- include("../partials/header") %>
+<div class="container mt-5">
+    <div class="container jumbotron">    
+<h1>Welcome to TripKart!</h1>
+<p>View our hand-picked places</p>
+</div>    
+
+<div class="row text-center">
+    <% places.forEach(function(place){ %>
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="img-thumbnail mb-1">
+                    <% if(place.result_object.photo){%>
+                        <img src="<%= place.result_object.photo.images.thumbnail.url %>" style="width: 150px; height: 100px;" alt="Unable to load image due to network issues">
+                    <%}else{ %>
+                        <img style="width: 150px; height: 100px;" alt="Unable to load image due to network issues">
+                    <% }%>
+                    
+                       <div>
+                        <h4 class="text-break"><%= place.result_object.name %></h4>
+                        <p><%= place.result_object.location_string %> </p>
+                        <p><%= place.result_object.description %> </p>
+                        <a href="/places/<%= place.result_object.location_id %>/0">Let's Go</a>
+                       </div>
+                    </div>
+            </div>   
+     <% }) %> 
+</div>
+    <%- include("../partials/footer") %>
+</div>

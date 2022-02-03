@@ -1,0 +1,23 @@
+<%- include("../partials/header") %>
+<div class="container mt-5">
+    <div class="container jumbotron">    
+<h1>Welcome to TripKart!</h1>
+<p>Your bookings are here </p>
+<a class="btn btn-warning btn-xs" href="/landing">Go to the main page</a>
+</div>    
+
+<div class="row text-center">
+    <% bookings.forEach(function(item){ %>
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="img-thumbnail mb-1">
+                    <div>
+                        <h4 class="text-break"><%= item.hotelname %></h4>
+                        <p><%= item.rooms %> </p>
+                        <p><%= item.checkin %> to <%= item.checkout %> </p>
+                    </div>
+                </div>
+            </div>   
+     <% }) %> 
+</div>
+    <%- include("../partials/footer") %>
+</div>

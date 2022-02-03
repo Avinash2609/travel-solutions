@@ -10,7 +10,6 @@ var passport=require("passport");
 var localstrategy=require("passport-local");
 var passportlocalmongoose=require("passport-local-mongoose");
 var expresssession=require("express-session");
-var User=require("./models/user");
 
 var methodoverride=require("method-override");
 app.use(methodoverride("_method"));
@@ -26,20 +25,19 @@ mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology:
 var flash = require("connect-flash");
 app.use(flash());
 
+/////////////////////////////////////// models
+// var User=require("./models/user");
+// var allusers=require("./models/user");
+// var requests=require("./models/request");
 
-var activities=require("./models/activities");
-var exercise=require("./models/exercise");
+//////////////////////////////////
 
 
-
-var indexroutes=require("./routes/index");
+/////////////routes
+var paymentroutes=require("./routes/payment");
 var mainroutes=require("./routes/main");
-// var commentroutes=require("./routes/comments");
-// var paymentroutes=require("./routes/payment");
-// ////////////////////////////////////
-// payment gateway////////////////////
-/////////////////////////////////////
-
+var indexroutes=require("./routes/index");
+/////////////////////
 
 
 
@@ -65,7 +63,7 @@ app.use(function(req,res,next){
 app.use(indexroutes); 
 app.use(mainroutes);
 // app.use(commentroutes);
-// app.use(paymentroutes);
+app.use(paymentroutes);
 
 
 

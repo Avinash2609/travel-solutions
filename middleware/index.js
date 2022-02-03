@@ -1,5 +1,5 @@
-var activities=require("../models/activities");
-var exercise=require("../models/exercise");
+var activities=require("../models/request");
+var exercise=require("../models/user");
 
 var middlewareobj={};
 

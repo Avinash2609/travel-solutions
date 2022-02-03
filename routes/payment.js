@@ -1,8 +1,13 @@
 var express=require("express");
 var passport=require("passport");
 require('dotenv').config();
-var campground=require("../models/campground");
+
+var bookingdata = require("../models/bookingdata");
+var bookinghotel = require("../models/bookinghotel");
+
+
 var middleware = require("../middleware/index");
+
 var router=express.Router({mergeParams: true});
 
 
@@ -21,7 +26,7 @@ var transporter = nodemailer.createTransport({
 const checksum_lib=require("../paytm/checksum/checksum");
 
 
-router.get("/campgrounds/:id/payment",middleware.isloggedin,function(req,res){
+router.get("/payment/:hid/:bid",function(req,res){
     let params={}
     // params['MID']='PafhkC08108295167919',
     params['MID']='wErUkK40798264521525',//testing
@@ -29,9 +34,11 @@ router.get("/campgrounds/:id/payment",middleware.isloggedin,function(req,res){
     params['CHANNEL_ID']='WEB',
     params['INDUSTRY_TYPE_ID']='Retail',
     params['ORDER_ID']="Merchant"+Math.random().toString(36).substring(2,15),
-    params['CUST_ID']=String(req.user.username)+Math.random().toString(36).substring(2,15),
+    params['CUST_ID']="ajidal"+Math.random().toString(36).substring(2,15),
+
+    // params['CUST_ID']=String(req.user.username)+Math.random().toString(36).substring(2,15),
     params['TXN_AMOUNT']='1',
-    params['CALLBACK_URL']='http://localhost:3001/campgrounds/' + req.params.id +'/status/' + params['ORDER_ID'],//testing
+    params['CALLBACK_URL']='http://localhost:3001/campgrounds/' + req.params.hid + "/" + req.params.bid +'/status/' + params['ORDER_ID'],//testing
     // params['CALLBACK_URL']='https://avinashjindal2510.herokuapp.com/campgrounds/' + req.params.id +'/status/' + params['ORDER_ID'],
     params['EMAIL']='ajindal_be18@thapar.edu',
     params['MOBILE_NO']='9050995986'
@@ -58,23 +65,35 @@ router.get("/campgrounds/:id/payment",middleware.isloggedin,function(req,res){
 
 //////////////////////////////////////////////payment
 
-router.post("/campgrounds/:id/status/:id1", middleware.isloggedin ,function(req,res){
-    campground.findById(req.params.id, function(err, foundcampground){
+router.post("/campgrounds/:hid/:bid/status/:id1" ,function(req,res){
+    bookingdata.findById(req.params.bid, function(err, founddata){
         if(err){
             req.flash("error", err);
-            res.redirect("/info");
+            res.redirect("/landing");
         }
         else{
-            foundcampground.txn_id=req.body.TXNID;
-            foundcampground.btxn_id=req.body.BANKTXNID;
-            foundcampground.save();
+            if(req.body.STATUS=="TXN_SUCCESS"){
+                founddata.bookingstatus="booked";   
+                founddata.paymentid=req.body.BANKTXNID;
+                founddata.save();
+                bookinghotel.findById(req.params.hid,function(err,hfound){
+                    if(err){
+                        req.flash(err);
+                        res.redirect("/landing");
+                    }else{
+                        hfound.allrequests.push(founddata);
+                        hfound.save();
+                    }
+                })
+            }
+            
             // console.log(foundcampground);
 
             var mailOptions = {
                 from: 'ajindal_be18@thapar.edu',
-                to: req.user.emails[0].value,
-                subject: 'Payment Confirmation',
-                html: `<h1>Hi!!! ${foundcampground.name}</h1>
+                to: founddata.usermail,
+                subject: 'Booking Reciept',
+                html: `<h1>Hi!!! ${founddata.name}</h1>
                 <p>We have received your payment.</p>
                 <h4 class="text-center">Your receipt is:</h4>
                     <table border="1PX" align="center">
@@ -139,11 +158,11 @@ router.post("/campgrounds/:id/status/:id1", middleware.isloggedin ,function(req,
                 }
               });
 
-            res.render("campgrounds/payment",{fcampground: foundcampground,details: req.body});
+            res.render("main/payment",{details: req.body});
         }
     })
     
-    req.flash("success", "Your appointment request has been sent successfully. Thank you!");
+    req.flash("success", " Thank you! For the Booking");
     
 })
 
