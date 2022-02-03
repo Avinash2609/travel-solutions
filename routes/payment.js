@@ -34,9 +34,8 @@ router.get("/payment/:hid/:bid",function(req,res){
     params['CHANNEL_ID']='WEB',
     params['INDUSTRY_TYPE_ID']='Retail',
     params['ORDER_ID']="Merchant"+Math.random().toString(36).substring(2,15),
-    params['CUST_ID']="ajidal"+Math.random().toString(36).substring(2,15),
 
-    // params['CUST_ID']=String(req.user.username)+Math.random().toString(36).substring(2,15),
+    params['CUST_ID']=String(req.user.username)+Math.random().toString(36).substring(2,15),
     params['TXN_AMOUNT']='1',
     // params['CALLBACK_URL']='http://localhost:3001/campgrounds/' + req.params.hid + "/" + req.params.bid +'/status/' + params['ORDER_ID'],//testing
     params['CALLBACK_URL']='https://tripkart.herokuapp.com/' + req.params.hid + "/" + req.params.bid +'/status/' + params['ORDER_ID'],//testing
@@ -45,8 +44,8 @@ router.get("/payment/:hid/:bid",function(req,res){
 
     // checksum_lib.genchecksum(params,'_IFq1ytY9gWQ&8jZ',function(err,checksum){
         checksum_lib.genchecksum(params,'RyS29!4Q65GYcgN_',function(err,checksum){ //testing
-        let txn_url="https://securegw.paytm.in/order/process" //testing
-        // let txn_url="https://securegw-stage.paytm.in/order/process"
+        // let txn_url="https://securegw.paytm.in/order/process" //testing
+        let txn_url="https://securegw-stage.paytm.in/order/process"
         let form_fields=""
 
         for(x in params)
