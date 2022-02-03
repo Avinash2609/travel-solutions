@@ -65,7 +65,7 @@ router.get("/payment/:hid/:bid",function(req,res){
 
 //////////////////////////////////////////////payment
 
-router.post("/campgrounds/:hid/:bid/status/:id1" ,function(req,res){
+router.post("/:hid/:bid/status/:id1" ,function(req,res){
     bookingdata.findById(req.params.bid, function(err, founddata){
         if(err){
             req.flash("error", err);
