@@ -34,23 +34,23 @@
     background-repeat: no-repeat;
     opacity: 0;
     z-index: 0;
-    animation: imageAnimation 50s linear infinite; 
+    animation: imageAnimation 20s linear infinite; 
   }
   
   .slideshow li:nth-child(1) { 
-    background-image: url(https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701450925.jpg);
+    background-image: url('/images/1.jpg');
   }
   .slideshow li:nth-child(2) { 
-    background-image: url(https://images3.alphacoders.com/101/thumb-1920-1010294.jpg);
-    animation-delay: 10s; 
+    background-image: url('/images/2.jpg');
+    animation-delay: 5s; 
   }
   .slideshow li:nth-child(3) { 
-    background-image: url(https://cdn.hipwallpaper.com/i/37/65/qXUe9F.jpg);
-    animation-delay: 20s; 
+    background-image: url('/images/3.jpg');
+    animation-delay: 10s; 
   }
   .slideshow li:nth-child(4) { 
-    background-image: url(https://i.pinimg.com/originals/5f/8d/12/5f8d12fd83f0606e6cd15245ed23d861.png);
-    animation-delay: 30s; 
+    background-image: url('/images/4.jpg');
+    animation-delay: 15s; 
   }
 
   @keyframes imageAnimation { 

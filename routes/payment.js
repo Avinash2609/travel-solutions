@@ -38,15 +38,15 @@ router.get("/payment/:hid/:bid",function(req,res){
 
     // params['CUST_ID']=String(req.user.username)+Math.random().toString(36).substring(2,15),
     params['TXN_AMOUNT']='1',
-    params['CALLBACK_URL']='http://localhost:3001/campgrounds/' + req.params.hid + "/" + req.params.bid +'/status/' + params['ORDER_ID'],//testing
-    // params['CALLBACK_URL']='https://avinashjindal2510.herokuapp.com/campgrounds/' + req.params.id +'/status/' + params['ORDER_ID'],
+    // params['CALLBACK_URL']='http://localhost:3001/campgrounds/' + req.params.hid + "/" + req.params.bid +'/status/' + params['ORDER_ID'],//testing
+    params['CALLBACK_URL']='https://tripkart.herokuapp.com/' + req.params.hid + "/" + req.params.bid +'/status/' + params['ORDER_ID'],//testing
     params['EMAIL']='ajindal_be18@thapar.edu',
     params['MOBILE_NO']='9050995986'
 
     // checksum_lib.genchecksum(params,'_IFq1ytY9gWQ&8jZ',function(err,checksum){
         checksum_lib.genchecksum(params,'RyS29!4Q65GYcgN_',function(err,checksum){ //testing
-        // let txn_url="https://securegw.paytm.in/order/process" //testing
-        let txn_url="https://securegw-stage.paytm.in/order/process"
+        let txn_url="https://securegw.paytm.in/order/process" //testing
+        // let txn_url="https://securegw-stage.paytm.in/order/process"
         let form_fields=""
 
         for(x in params)

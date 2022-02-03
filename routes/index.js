@@ -8,7 +8,8 @@ var router=express.Router({mergeParams: true});
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-     callbackURL: "http://localhost:3001/google/callback",//testing
+    //  callbackURL: "http://localhost:3001/google/callback",//testing
+     callbackURL: "https://tripkart.herokuapp.com/google/callback",
     passReqToCallback: true
   },
   function(request,accessToken, refreshToken, profile, done) {
